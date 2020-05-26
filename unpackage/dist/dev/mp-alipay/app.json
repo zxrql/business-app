@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/Shopmanagement/Shopmanagement",
+    "pages/login/login",
+    "pages/Orderprocessing/Orderprocessing",
+    "pages/Orderquery/Orderquery",
+    "pages/Setup/Setup",
+    "pages/Setup/Accountnumber",
+    "pages/Setup/updatepassword",
+    "pages/Setup/updatephone"
+  ],
+  "subPackages": [],
+  "window": {
+    "titleBarColor": "#0099FF",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "textColor": "#999999",
+    "selectedColor": "#000000",
+    "backgroundColor": "#FFFFFF",
+    "items": [
+      {
+        "pagePath": "pages/Orderprocessing/Orderprocessing",
+        "name": "订单处理",
+        "icon": "static/order-processing.png",
+        "activeIcon": "static/order-processing-hover.png"
+      },
+      {
+        "pagePath": "pages/Orderquery/Orderquery",
+        "name": "订单查询",
+        "icon": "static/order-history.png",
+        "activeIcon": "static/order-history-hover.png"
+      },
+      {
+        "pagePath": "pages/Shopmanagement/Shopmanagement",
+        "name": "商铺管理",
+        "icon": "static/shangpu.png",
+        "activeIcon": "static/shangpu-hover.png"
+      },
+      {
+        "pagePath": "pages/Setup/Setup",
+        "name": "设置",
+        "icon": "static/set-up.png",
+        "activeIcon": "static/set-up-hover.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  }
+}

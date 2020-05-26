@@ -1,0 +1,203 @@
+
+{
+
+	"easycom": {
+			"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+		},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	{
+	    "path" : "pages/index/index",
+	    "style" : {
+			"navigationBarTitleText":"商铺管理"
+		}
+	},
+		{
+		    "path" : "pages/Shopmanagement/Shopmanagement",
+		    "style" : {
+				"navigationBarTitleText":"商铺管理"
+			}
+		},
+		{
+		    "path" : "pages/login/login",
+		    "style" : {}
+		},
+        {
+            "path" : "pages/Orderprocessing/Orderprocessing",
+            "style" : {
+				"navigationBarTitleText":"订单处理"
+			}
+        },
+        {
+            "path" : "pages/Orderquery/Orderquery",
+            "style" : {
+				"navigationBarTitleText":"订单查询"
+			}
+        },
+      
+        {
+            "path" : "pages/Setup/Setup",
+            "style" : {
+				"navigationBarTitleText":"设置"
+			}
+        }
+        ,{
+            "path" : "pages/Setup/Accountnumber",
+            "style" : {
+				"navigationBarTitleText":"账号"
+			}
+        }
+        ,{
+            "path" : "pages/Setup/updatepassword",
+            "style" : {
+				"navigationBarTitleText":"修改密码"
+			}
+        }
+        ,{
+            "path" : "pages/Setup/updatephone",
+            "style" : {
+				"navigationBarTitleText":"修改手机号"
+			}
+        },
+		{
+		    "path" : "pages/Setup/set-up-about",
+		    "style" : {
+				"navigationBarTitleText":"关于我们"
+			}
+		}
+		,
+		{
+		    "path" : "pages/Setup/set-up-access",
+		    "style" : {
+				"navigationBarTitleText":"通知与提示音"
+			}
+		}
+        ,{
+            "path" : "pages/Shopmanagement/shoplist",
+            "style" : {
+				"navigationBarTitleText":"商品列表"
+			}
+        }
+        ,{
+            "path" : "pages/Shopmanagement/Managementclassification",
+            "style" : {
+				"navigationBarTitleText":"管理分类"
+			}
+        }
+        ,{
+            "path" : "pages/Shopmanagement/addclassification",
+            "style" : {
+				"navigationBarTitleText":"添加分类"
+			}
+        }
+        ,{
+            "path" : "pages/Shopmanagement/updateclassification",
+            "style" : {
+				"navigationBarTitleText":"修改分类"
+			}
+        }
+        ,{
+            "path" : "pages/Shopmanagement/addshop",
+            "style" : {
+				"navigationBarTitleText":"添加商品"
+			}
+        }
+        ,{
+            "path" : "pages/Shopmanagement/updateshop",
+            "style" : {
+				"navigationBarTitleText":"修改商品"
+			}
+        }
+        ,{
+            "path" : "pages/Setup/printer",
+            "style" : {
+				"navigationBarTitleText":"打印机管理"
+			}
+        }
+        ,{
+            "path" : "pages/Setup/printermanage",
+            "style" : {
+				"navigationBarTitleText":"打印机设置"
+			}
+        },
+		{
+		    "path" : "pages/nvue/nvue",
+		    "style" : {
+				"navigationBarTitleText":"账号"
+			}
+		},
+		{
+		    "path" : "pages/viewPort/viewPort",
+		    "style" : {
+				"navigationBarTitleText":"经营数据"
+			}
+		}
+		,{
+		    "path" : "pages/datePicker/datePicker",
+		    "style" : {
+				"navigationBarTitleText":"账单筛选"
+			}
+		}
+        ,{
+            "path" : "pages/Setup/notopen",
+            "style" : {
+					"navigationBarTitleText":"该功能暂未开放"
+			}
+        }
+        ,{
+            "path" : "pages/map/map",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/Shopmanagement/addclerk",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/Shopmanagement/clerkmanagement",
+            "style" : {
+				"navigationBarTitleText":"店员管理"
+			}
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarBackgroundColor": "#0099FF",
+		"backgroundColor": "#F8F8F8"
+		 
+	},
+	"tabBar":{
+		"color":"#999999",
+		"selectedColor":"#000000",
+		"backgroundColor":"#FFFFFF",
+		"fontSize":"12",
+		"list":[
+			{
+				"pagePath":"pages/Orderprocessing/Orderprocessing",
+				"iconPath":"static/order-processing.png",
+				"selectedIconPath":"static/order-processing-hover.png",
+				"text":"订单处理"
+				
+			},
+			{
+				"pagePath":"pages/Orderquery/Orderquery",
+				"iconPath":"static/order-history.png",
+				"selectedIconPath":"static/order-history-hover.png",
+				"text":"订单查询"
+			},
+			{
+				"pagePath":"pages/Shopmanagement/Shopmanagement",
+				"iconPath":"static/shangpu.png",
+				"selectedIconPath":"static/shangpu-hover.png",
+				"text":"商铺管理"
+			},
+			{
+				"pagePath":"pages/Setup/Setup",
+				"iconPath":"static/set-up.png",
+				"selectedIconPath":"static/set-up-hover.png",
+				"text":"设置"
+			}
+			
+		]
+	}
+	
+	
+}

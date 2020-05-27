@@ -5,12 +5,12 @@
 			"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
 		},
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-	{
-	    "path" : "pages/index/index",
-	    "style" : {
-			"navigationBarTitleText":"商铺管理"
-		}
-	},
+	// {
+	//     "path" : "pages/index/index",
+	//     "style" : {
+	// 		"navigationBarTitleText":"商铺管理"
+	// 	}
+	// },
 		{
 		    "path" : "pages/Shopmanagement/Shopmanagement",
 		    "style" : {
@@ -149,12 +149,20 @@
         }
         ,{
             "path" : "pages/Shopmanagement/addclerk",
-            "style" : {}
+            "style" : {
+					"navigationBarTitleText":"添加店员"
+			}
         }
         ,{
             "path" : "pages/Shopmanagement/clerkmanagement",
             "style" : {
 				"navigationBarTitleText":"店员管理"
+			}
+        }
+        ,{
+            "path" : "pages/Shopmanagement/updateclerk",
+            "style" : {
+				"navigationBarTitleText":"修改店员"
 			}
         }
     ],

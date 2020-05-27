@@ -90,66 +90,21 @@
 					 
 					
 		  </view>
-		 <view class="margin-xs" v-if="flag">
-		       <view class="flex flex-wrap " >
-		        <text class="text-sm text-gray">规格项</text>
-		 	   <text class="flex align-end" @tap="showModal" data-target="Modal">+</text>
-			    
-			   </view>
+		 <view class="" v-if="flag">
+		     
 				   <!-- <button class="cu-btn line-orange" v-for="(item,i) of cs"  :key="i" ref='btn1'>{{item}}</button> -->
 				   
-				   <view class="ggx" style="background-color: #0099FF;">
-					   <view class="">
-					   	<text class="text-sm text-gray" v-for="(item,i) of cs"  :key="i" ref='btn1'>{{item}}</text>
-						<view class="">
-						<button class="cu-btn line-orange" v-for="(item,i) of css"  :key="i" ref='btn11'>{{item}}</button>
-						</view>
-					   </view>
-				    
-				   </view>
+				<TheProblem
+					:data="data"
+					:specListProp="specList"
+				>
+				</TheProblem>
 				   
 				   
-				    <text class="flex align-end" @tap="showModall" data-target="Modal">+</text>
-				  <view class="flex justify-between margin-xs " >
-				  	
-				  </view>
+				
 				   
-				   
-				  <view class="cu-modal" :class="modalName=='Modal'?'show':''">
-				  	<view class="cu-dialog">
-				  		<view class="cu-bar bg-white justify-end">
-				  			<view class="content">Modal标题</view>
-				  			<view class="action" @tap="hideModal">
-				  				<text class="cuIcon-close text-red"></text>
-				  			</view>
-				  		</view>
-				  	<view class="cu-form-group" style="margin-top: 20rpx;">
-				  		<view class="title">规格项名称</view>
-				  		<input   name="input"  type="number"  v-model="seat" ref='inp1'></input>
-						<text></text>
-				  		 <text class="uni-icon" v-if="showClearIconn" @click="clearIconn">&#xe434;</text>
-				  	</view> 
-				  	<button type="default" @click="onAdd">保存</button>
-				  	</view>
-				  </view>
-				  
-				  <view class="cu-modal" :class="modalNamee=='Modal'?'show':''">
-				  	<view class="cu-dialog">
-				  		<view class="cu-bar bg-white justify-end">
-				  			<view class="content">Modal标题</view>
-				  			<view class="action" @tap="hideModall">
-				  				<text class="cuIcon-close text-red"></text>
-				  			</view>
-				  		</view>
-				  	<view class="cu-form-group" style="margin-top: 20rpx;">
-				  		<view class="title">规格名称</view>
-				  		<input   name="input"  type="number"  v-model="seatt" ref='inp11'></input>
-				  						<text></text>
-				  		 <text class="uni-icon" v-if="showClearIconn" @click="clearIconn">&#xe434;</text>
-				  	</view> 
-				  	<button type="default" @click="onAddd">保存</button>
-				  	</view>
-				  </view>
+				
+			
 				  
 				  
 				  
@@ -163,31 +118,14 @@
 </template>
 
 <script>
+	import {data} from 'index.js'
+	import TheProblem from 'components/MM.vue'
 	export default {
 		data() {
 			return {
 				modalName: null,
 				modalNamee: null,
-				cs:[],
-				seat:'',
-				css:[],
-				seatt:'',
-				 // cs: [
-					//  {
-					// 	 name:"辣度",
-					// 	 cs:[
-					// 		 {
-					// 			 namee:"重辣"
-					// 		 },
-					// 		 {
-					// 		 								 namee:"微辣"
-					// 		 }
-					// 	 ]
-					//  },
-					//  {
-					//  	 name:"调味"
-					//  }
-				 // ],
+			data:[],
 				imageSrc: '../../static/sctpp.png',
 				showClearIcon: false,
 				showClearIconn: false,
@@ -222,8 +160,46 @@
 				
 			}
 		},
+		components:{
+			TheProblem
+		},
 	onUnload() {
 		this.imageSrc = '';
+	},
+	computed:{
+		specList(){
+			let result = []
+			data.forEach(item=>{
+				item.propertyList.forEach(property=>{
+					// 查找 result 是否有 property.name 这一项, 返回一个布尔值
+					let target = result.find(spec=>{
+						return spec.name === property.name
+					});
+					/*	
+						target:
+							true
+							false
+					*/
+				   if (!target) {
+						 result.push({
+							 name: property.name,
+							 valueList: [{name: property.value,price:property.price}]
+						 })
+					 } else {
+						 if (!target.valueList.find(value => value.name === property.value)) {
+							 target.valueList.push({name: property.value,price:property.price})
+						 }
+					 }
+					
+				})
+			});
+			return result
+		}
+	},
+	mounted(){
+		setTimeout(()=>{
+			this.data = data
+		},500)
 	},
 		methods: {
 			showModal(e) {

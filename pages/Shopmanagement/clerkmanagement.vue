@@ -11,12 +11,12 @@
 			<view class="clerk-phone">
 			<text>{{item.phone}}</text>	
 			</view>
-			<view class="clerk-name">
+			<view class="clerk-name" @click="deleteOrder(index)">
 		<!-- 	<image src="../../static/" mode="" class="cuIcon-deletefill"></image> -->
 		<text class="lg text-gray " :class="'cuIcon-' + item.name"></text>
 			</view>
 			
-			<view class="clerk-namee">
+			<view class="clerk-namee" @click="update(index)">
 			<!-- 	<image src="../../static/" mode="" class="cuIcon-deletefill"></image> -->
 			<text class="lg text-gray " :class="'cuIcon-' + item.namee"></text>
 				</view>
@@ -24,8 +24,8 @@
 		</view>
 		
 		<!-- 底部开始 -->
-		<view class="cu-bar search " style="width: 100%;height: 100rpx;position: fixed;bottom: 0;background-color: #0099ff;">
-				<view class="glfl"  @click="glfl">
+		<view class="cu-bar search " style="width: 100%;height: 100rpx;position: fixed;bottom: 0;background-color: #0099ff;" @click="addclerk">
+				<view class="glfl">
 						<image src="../../static/tjdy.png" mode="aspectFill" style="width: 50rpx;height: 50rpx;vertical-align:middle;"></image>
 						<text class="glfl-text">添加店员</text>
 				</view>
@@ -60,7 +60,30 @@
 			}
 		},
 		methods: {
-			
+			addclerk(){
+				uni.navigateTo({
+					url:"./addclerk"
+				})
+			},
+			//删除店员
+			deleteOrder(index){
+				uni.showLoading({
+					title: '请稍后'
+				})
+				setTimeout(()=>{
+					this.list.splice(index, 1);
+					uni.hideLoading();
+				}, 600)
+			},
+			//修改店员
+			update(index){
+				uni.showLoading({
+					title: '请稍后'
+				})
+				uni.navigateTo({
+					url:"./updateclerk"
+				})
+			},
 		}
 	}
 </script>
